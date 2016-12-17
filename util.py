@@ -21,6 +21,6 @@ def save_Ps_and_Ts(data_filename, Fs = 1000, f_range = (6,12)):
     # Save peaks and troughs
     save_dict =  {'Ps':Ps, 'Ts':Ts}
     for key in save_dict.keys():
-        filename_save = './'+key+'_'+os.path.basename(data_filename)
+        filename_save = './out/'+key+'_'+os.path.basename(data_filename)
         np.save(filename_save, save_dict[key])
             
