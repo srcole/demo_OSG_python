@@ -1,0 +1,27 @@
+# Standard universe
+Universe = vanilla
+# Shell file we want to run
+Executable = exe_find_PsTs.sh
+# Files to transport
+should_transfer_files = YES
+transfer_input_files = python_virtenv_demo.tar.gz, misshapen.tar.gz, util.py, find_PsTs.py
+when_to_transfer_output = ON_EXIT
+
+# Log file save location
+output        = Log/job_hc2_v1.$(Cluster).$(Process).out
+error         = Log/job_hc2_v1.$(Cluster).$(Process).error
+log           = Log/job_hc2_v1.$(Cluster).$(Process).log
+
+# Specs needed on nodes
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+# Arguments for the shell file we run
+Arguments = $(Cluster) $(Process)
+
+# Requirements of nodes
+requirements = (HAS_MODULES == True &&  HAS_FILE_usr_lib64_atlas_libptf77blas_so_3 == True)
+
+# Do 10 processes (0-9)
+queue 10
