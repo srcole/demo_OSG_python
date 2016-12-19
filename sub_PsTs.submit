@@ -24,7 +24,7 @@ Arguments = $(Cluster) $(Process)
 
 # Node requirements
 +WantsStashCache = true
-requirements = (HAS_MODULES == True &&  HAS_FILE_usr_lib64_atlas_libptf77blas_so_3 == True)
+requirements = (HAS_MODULES == True &&  HAS_FILE_usr_lib64_atlas_libptf77blas_so_3 == True && HAS_FILE_usr_lib64_libtk8_5_so == True )
 
 # Do 10 processes (0-9)
 queue 10
